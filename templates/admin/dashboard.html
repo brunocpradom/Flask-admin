@@ -1,0 +1,12 @@
+{% extends 'admin/master.html' %}
+
+
+{% block body %}
+{% if current_user.is_authenticated==True %}
+<div class = 'container-fluid'>
+    <div style = 'height: 1600px;'>
+    <iframe frameborder='0' noresize='noresize' style='position: relative;  width: 100%;    height:100%;' src="{{url_for('grafico_de_acesso')}}"></iframe>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

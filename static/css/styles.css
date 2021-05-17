@@ -1,0 +1,24 @@
+.bg-grey {
+    background-color: #9eabbb;
+}
+
+.form-control {
+    background: #9eabbb;
+    border: 2px solid #fff;
+}
+
+.form-control::placeholder {
+    color: #fff;
+}
+
+@media(min-width: 768px) {
+    .form-control {
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+}

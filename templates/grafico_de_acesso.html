@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>Xmei</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}"/>
+    <link href="{{ url_for('static', filename='dash/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
+    <script src="{{ url_for('static', filename='dash/assets/js/loader.js') }}"></script>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="{{ url_for('static', filename='dash/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='dash/assets/css/plugins.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='dash/css/chart.css')}}" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUsidebar-wrapper sidebar-themeGINS/CUSTOM STYLES -->
+    <link href="{{ url_for('static', filename='dash/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='dash/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+</head>
+<body class="alt-menu sidebar-noneoverflow">
+
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container sidebar-closed sbar-open" id="container">
+
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+
+                <div class="row layout-top-spacing">
+
+
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+
+
+                        <div class="widget widget-chart-two">
+                            <div class="widget-heading">
+                                <h5 class="">Acessos por hora</h5>
+                            </div>
+                            <div class="widget-content">
+                                <figure class="highcharts-figure">
+                                    <div id="container-total"></div>
+                                    <p class="highcharts-description">
+                                        <!-- This chart shows how data labels can be added to the data series. This
+                                        can increase readability and comprehension for small datasets. -->
+                                    </p>
+                                </figure>
+                            </div>
+                            <div class = 'container'>
+                                <div class = 'row'>
+                            <div class="widget-content col">
+                                <figure class="highcharts-figure">
+                                    <div id="container-30"></div>
+                                    <p class="highcharts-description">
+                                        <!-- This chart shows how data labels can be added to the data series. This
+                                        can increase readability and comprehension for small datasets. -->
+                                    </p>
+                                </figure>
+                            </div>
+                            <div class="widget-content col">
+                                <figure class="highcharts-figure">
+                                    <div id="container-7"></div>
+                                    <p class="highcharts-description">
+                                        <!-- This chart shows how data labels can be added to the data series. This
+                                        can increase readability and comprehension for small datasets. -->
+                                    </p>
+                                </figure>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <script type="application/javascript">
+        var access_hour_thirty_days = {{ access_hour_thirty_days|tojson }};
+        var access_qtd_thirty_days = {{ access_qtd_thirty_days }};
+        var access_hour_seven_days = {{access_hour_seven_days|tojson}};
+        var access_qtd_seven_days = {{ access_qtd_seven_days}};
+        var access_hour_total = {{access_hour_total|tojson}};
+        var access_qtd_total = {{access_qtd_total}}
+        console.log(access_hour, access_qtd)
+    </script>
+    <!-- END MAIN CONTAINER -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="{{ url_for('static', filename='dash/assets/js/libs/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/bootstrap/js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/assets/js/app.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="{{ url_for('static', filename='dash/assets/js/custom.js') }}"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="{{ url_for('static', filename='dash/plugins/apex/apexcharts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='dash/assets/js/dashboard/dash_2.js') }}"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="{{ url_for('static', filename='dash/js/chart.js') }}"></script>
+
+</body>
+</html>

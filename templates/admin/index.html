@@ -1,0 +1,23 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+  {{ super() }}
+  <div class='container-fluid'>
+      <div class = 'jumbotron m-5 p-5'>
+          <div class ='text-center'>
+            <h1 class = ' p-3'>Welcome!</h1>
+              {% if not current_user.is_authenticated %}
+                <div class = 'p-4 text-center'>
+                  <a class='btn btn-primary' style = 'width:40%; float:center' href="{{ url_for('security.login') }}">login</a>
+                </div>
+             
+              {% endif %}
+              {% if current_user.is_authenticated %}
+              <h3>You have successfully logged in.</h3>
+              <p>You now have access to the Admin.</p>
+
+              {% endif %}
+          </div>
+      </div>
+  </div>
+{% endblock body %}

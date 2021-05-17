@@ -1,0 +1,106 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+{% if current_user.is_authenticated==True %}
+<style>
+  
+  .form-control{
+    background-color : white!important;
+  }
+  .form-control{
+    font-size : 15px!important
+  }
+  .form-control::placeholder{
+    color:black!important
+  }
+</style>
+
+<div class = 'container-fluid'>
+  <div class = 'row'>
+    <div class="jumbotron col-3" style = 'background-color: #373a3c'>
+      
+      <form method = 'POST' action>
+        <fieldset>
+          <legend class ='text-white'>Personalizar</legend>
+          <div class="form-group row">
+            
+          </div>
+          <div class="form-group text-white" >
+            <label for="exampleInputEmail1">Cor de fundo</label>
+            <input type="text" class="form-control" id="color" aria-describedby="emailHelp" 
+              name = 'color'>
+            <small id="color" class="form-text text-muted">Veja <a class ='text-white' href = 'https://imagecolorpicker.com/color-code/e94b73'>aqui</a> os códigos das cores</small>
+          </div>
+
+          <div class="form-group text-white" >
+            <label for="exampleInputEmail1">Primeira imagem</label>
+            <input type="text" class="form-control" id="image" aria-describedby="imagem" 
+              name = 'imagem'>
+            <small id="color" class="form-text text-muted">
+              Coloque aqui o nome da imagem e faça o upload em 
+              <a class ='text-white' href ='/admin/fileadmin/'> Imagens</a>
+            </small>
+          </div>
+          
+          <div class="form-group text-white">
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control dark-link" id="titulo" 
+            placeholder="Aqui vai sua headline" name = 'titulo'>
+          </div>
+
+          <div class="form-group text-white">
+            <label for="exampleTextarea">Subtítulo</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name = 'subtitulo'
+            placeholder = 'Utilize esse subtítulo para complementar a sua headline'></textarea>
+          </div>
+
+          <div class="form-group text-white">
+            <label for="botao">Botão</label>
+            <input type="text" class="form-control text-black" id="botao" 
+            placeholder="BAIXE O LIVRO AGORA" name = 'botao'>
+          </div>
+
+          <div class="form-group text-white" >
+            <label for="exampleInputEmail1">Segunda imagem</label>
+            <input type="text" class="form-control" id="image2" aria-describedby="imagem" 
+              name = 'imagem2'>
+            <small id="color" class="form-text text-muted">
+              Coloque aqui o nome da imagem e faça o upload em 
+              <a class ='text-white' href ='/admin/fileadmin/'> Imagens</a>
+            </small>
+          </div>
+
+          <div class="form-group text-white">
+            <label for="exampleTextarea">Quem eu sou</label>
+            <textarea class="form-control" id="quemeusou" name ='quemeusou' rows="3"
+            placeholder = 'COnte aqui quem você é e como você ajuda as pessoas ...'></textarea>
+          </div>
+
+          <div class="form-group text-white">
+            <label for="botao">Nome da empresa</label>
+            <input type="text" class="form-control text-black" id="nomedaempresa" 
+            name ='nomedaempresa' placeholder="Nome da empresa">
+          </div>
+
+          
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+          
+        </fieldset>
+      </form>
+
+  
+     
+    </div>
+    <div class = 'jumbotron col'>
+
+    
+  </div>  
+    
+</div>
+</div>
+
+
+{% endif %}
+{% endblock %}
